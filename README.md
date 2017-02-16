@@ -2,8 +2,8 @@
 
 Go-CamRecorder is a multiplatform recording tools based on OpenCV and the Omiscid Middleware written in C++.
 It records Go games into sgf files using a simple Webcam or a Kinect on Linux/Windows (Tests were not done on MacOSX).
-For the first version, only Kinect1 device on Windows is supported. Plan for next version is to include Kinect1 and Kinect2,
-on Linux and Windows. 
+For the first version, only the Kinect1 device on Windows is supported. Plan for next version is to include Kinect1 and Kinect2,
+on both Linux and Windows. 
 
 ## Short explanation
 
