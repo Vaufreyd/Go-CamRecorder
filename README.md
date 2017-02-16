@@ -45,14 +45,13 @@ Next images depict stone detectors over the goban, black detection and white det
 
 ## Examples
 
-Examples can be found on the [Go-CamRecorder YouTube channel](https://www.youtube.com/channel/UCmsQVrwGb3ARL4KsHE5NVpA).
-
 Here is a screen capture of Go-CamRecorder while processing 
 a Game (thank you to the player/recorder of this session). At left, you can see the goban state as detected
 using computer vision by Go-CamRecorder 1.0a. At right, the processing frames captured using a webcam. There is an integration time between both views. It permits to deal with false stone detection, false stone loss, etc. Red squares represent motion detection on each stone detector on the goban. Black ellipses with blue border are detected black stones; white ellipses with black border are white detected stones. When visual perception failed, for instance when an arm hides a move and thus stones are detected in the wrong order, a comment is inserted in the SGF file to help humans correct the SGF file.
 
 ![White detection](Images/Go-CamRecorder_in_action.png).
 
+Examples can be found on the [Go-CamRecorder YouTube channel](https://www.youtube.com/channel/UCmsQVrwGb3ARL4KsHE5NVpA).
 The [SGF file produced by Go-CamRecorder from this video is available in the SGF_Examples folder of the repo](https://github.com/Vaufreyd/Go-CamRecorder/blob/master/SGF_Examples/2017-02-16.17-20_2612040790.sgf).
 
 ## Source code availability
