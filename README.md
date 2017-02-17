@@ -2,8 +2,12 @@
 
 Go-CamRecorder is a multiplatform recording tools based on OpenCV and the Omiscid Middleware written in C++.
 It records Go games into sgf files using a simple Webcam or a Kinect on Linux/Windows (Tests were not done on MacOSX).
-For the first version, only Kinect1 device on Windows is supported. Plan for next version is to include Kinect1 and Kinect2,
-on Linux and Windows. 
+For the first version, only the Kinect1 device on Windows is supported. Plan for next version is to include Kinect1 and Kinect2,
+on both Linux and Windows. 
+
+## Source code availability
+
+A test in the wild of the software will be done at [the European Youth Go Championships 2017](http://eygc2017.jeudego.org/), in Grenoble. Release of the source code will follow this experiment.
 
 ## Short explanation
 
@@ -54,7 +58,4 @@ using computer vision by Go-CamRecorder 1.0a. At right, the processing frames ca
 Examples can be found on the [Go-CamRecorder YouTube channel](https://www.youtube.com/channel/UCmsQVrwGb3ARL4KsHE5NVpA).
 The [SGF file produced by Go-CamRecorder from this video is available in the SGF_Examples folder of the repo](https://github.com/Vaufreyd/Go-CamRecorder/blob/master/SGF_Examples/2017-02-16.17-20_2612040790.sgf).
 
-## Source code availability
-
-A test in the wild of the software will be done at [the European Youth Go Championships 2017](http://eygc2017.jeudego.org/), in Grenoble. Release of the source code will follow this experiment.
 
