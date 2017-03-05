@@ -1,0 +1,12 @@
+[submodule "Omiscid"]
+	path = Omiscid
+	url = https://github.com/Vaufreyd/Omiscid.git
+[submodule "Kinect"]
+	path = Kinect
+	url = https://github.com/Vaufreyd/Kinect.git
+[submodule "DataManagement"]
+	path = DataManagement
+	url = https://github.com/Vaufreyd/DataManagement.git
+[submodule "CMakeModule"]
+	path = CMakeModule
+	url = https://github.com/Vaufreyd/CMakeModule.git
