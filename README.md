@@ -5,9 +5,71 @@ It records Go games into sgf files using a simple Webcam or a Kinect on Linux/Wi
 For the first version, only the Kinect1 device on Windows is supported. Plan for next version is to include Kinect1 and Kinect2,
 on both Linux and Windows. 
 
+# Known issues
+## Technical issues
+-	Some problems with Webcams occur with OpenCV on Linux. We managed to make kernel panics reading widespread USB webcam with OpenCV.  
+-	For the moment, Kinect1 devices are supported only on Windows. Kinect2 support on Linux and Windows will be added later.
+-	Obviously, the software works better if the goban is parallel to the camera plane.  Nevertheless, the software supports angle while stones do not hide too much each other in the camera view.
+
+## Algorithm issues
+-	Main issue concerns white stone detection. Goban can have huge reflections that are considered as White stones (due to camera white balancing). During beta tests, thresholding solved this problem. While testing in the wild, neon lights produce such reflection. Several strategies prevent from false positive but leads to non-detection of white stones. Some work must be done to tackle this issue (you are welcome to contribute!). Black detection work fine.
+-	Using webcam, if someone with a black (or white) pullover stays still for too long over the goban, stones will be detected.
+-	Stones are not always detected in the right order, more over when players act quickly and hide stones while playing. 
+-	SGF files contain only new moves, i.e. appearing stones. Disappeared stones are not included in the file: they are inferred from captures. The current strategy to aggregate new moves into SGF does not allow to remove false detection even if the software detection them afterward. This strategy must be improved.
+
 ## Source code availability
 
 A test in the wild of the software will be done at [the European Youth Go Championships 2017](http://eygc2017.jeudego.org/), in Grenoble. Release of the source code will follow this experiment.
+
+## Building the program
+
+### Requirements
+
+#### *ffmpeg*
+
+You must install [ffmpeg](https://www.ffmpeg.org/) version 2.4.7 (or later) to your computer in a way you can call `ffprobe` and `ffmpeg` from
+the command line. For older version, please read KnownIssues.md.
+In a command shell (even in the standard cmd.exe shell on Windows), you can test `ffprobe` and `ffmpeg` to see if it is working.
+
+    $> ffprobe --version  
+    $> ffmpeg --version
+
+#### *OpenCV*
+
+You **DO NOT** need to recompile OpenCV to support specific codecs. You just need to install it. This source code
+was tested with OpenCV 2.4.10 (Linux/Windows/Mac OSX) and 3.0.0 (on Windows only for this last version.) Please see the [OpenCV web site](http://opencv.org).
+
+#### *cmake*
+
+In all environment, you must install cmake (2.8 or later).
+
+#### *git*
+
+In all environment, you must install git. It must be callable from the sandatd shell (as `ffmpeg`). You could try:
+
+    $> git --version  
+
+#### *Visual Studio (Windows users Only)*
+
+On Windows, you must install Visual Studio 2013 (Express, for the free version) or later.
+
+### Linux/Mac OSX compilation
+
+On these environments, you need to call `cmake` to create the make file within this folder:
+
+    $> cmake .
+
+After these step is complete, you can call make:
+
+    $> make
+
+### Windows compilation
+
+You must first create a visual studio solution for the program. On Windows, you must specify the location of your OpenCV build folder invoking `cmake` with parameters:
+
+    $> cmake . -DOpenCV_FIND_QUIETLY:BOOLEAN=FALSE -G "Visual Studio 12 Win64" "-DOpenCV_DIR:STRING=PATH_TO_YOUR_OPENCV\\opencv\\build"
+
+It will produce a complete solution named `Go-CamRecorder.sln`. You can open it in order to compile the program.
 
 ## Short explanation
 
