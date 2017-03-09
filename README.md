@@ -17,6 +17,16 @@ on both Linux and Windows.
 -	Stones are not always detected in the right order, more over when players act quickly and hide stones while playing. 
 -	SGF files contain only new moves, i.e. appearing stones. Disappeared stones are not included in the file: they are inferred from captures. The current strategy to aggregate new moves into SGF does not allow to remove false detection even if the software detection them afterward. This strategy must be improved.
 
+## Getting the source code (cloning and updating)
+
+As we used submodules in our project, in order to clone this repo, you must ask git to work recursively:
+
+    $> git clone --recursive https://github.com/Vaufreyd/Go-CamRecorder.git
+    
+For the same reason, in order to update this repo, you must ask git to work recursively with submodules:
+
+    $> git pull --recurse-submodules
+
 ## Building the program
 
 ### Requirements
@@ -51,7 +61,7 @@ On Windows, you must install Visual Studio 2013 (Express, for the free version) 
 
 ### Linux/Mac OSX compilation
 
-On these environments, you need to call `cmake` to create the make file within this folder:
+On these environments, you need to call `cmake` to create the make file within the `Go-CamRecorder` folder:
 
     $> cmake .
 
@@ -61,7 +71,7 @@ After these step is complete, you can call make:
 
 ### Windows compilation
 
-You must first create a visual studio solution for the program. On Windows, you must specify the location of your OpenCV build folder invoking `cmake` with parameters:
+You must first create a visual studio solution for the program. On Windows, you must specify the location of your OpenCV build folder invoking `cmake` within the `Go-CamRecorder` folder:
 
     $> cmake . -DOpenCV_FIND_QUIETLY:BOOLEAN=FALSE -G "Visual Studio 12 Win64" "-DOpenCV_DIR:STRING=PATH_TO_YOUR_OPENCV\\opencv\\build"
 
