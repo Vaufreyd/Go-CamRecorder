@@ -12,14 +12,10 @@ on both Linux and Windows.
 -	Obviously, the software works better if the goban is parallel to the camera plane.  Nevertheless, the software supports angle while stones do not hide too much each other in the camera view.
 
 ## Algorithm issues
--	Main issue concerns white stone detection. Goban can have huge reflections that are considered as White stones (due to camera white balancing). During beta tests, thresholding solved this problem. While testing in the wild, neon lights produce such reflection. Several strategies prevent from false positive but leads to non-detection of white stones. Some work must be done to tackle this issue (you are welcome to contribute!). Black detection work fine.
+-	Main issue concerns white stone detection. Goban can have huge reflections that are considered as White stones (due to camera white balancing). During beta tests, thresholding solved this problem. While testing in the wild at [the European Youth Go Championships 2017](http://eygc2017.jeudego.org/), neon lights produce such reflection. Several strategies prevent from false positive but leads to non-detection of white stones. Some work must be done to tackle this issue (you are welcome to contribute!). Black detection work fine.
 -	Using webcam, if someone with a black (or white) pullover stays still for too long over the goban, stones will be detected.
 -	Stones are not always detected in the right order, more over when players act quickly and hide stones while playing. 
 -	SGF files contain only new moves, i.e. appearing stones. Disappeared stones are not included in the file: they are inferred from captures. The current strategy to aggregate new moves into SGF does not allow to remove false detection even if the software detection them afterward. This strategy must be improved.
-
-## Source code availability
-
-A test in the wild of the software will be done at [the European Youth Go Championships 2017](http://eygc2017.jeudego.org/), in Grenoble. Release of the source code will follow this experiment.
 
 ## Building the program
 
