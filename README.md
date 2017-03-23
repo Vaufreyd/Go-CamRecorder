@@ -77,6 +77,18 @@ You must first create a visual studio solution for the program. On Windows, you 
 
 It will produce a complete solution named `Go-CamRecorder.sln`. You can open it in order to compile the program.
 
+### Program invocation
+
+To launch th program, you can call it with paramaters on example video:
+
+    # On Windows
+    $> PATH_TO_EXECUTABLE\GoCamRecorder.exe --source Examples/Test.mp4
+
+    # On other plateform
+    $> PATH_TO_PROGRAM/GoCamRecorder --source Examples/Test.mp4
+
+To get information about possible parameters, just use the --help parameter.
+
 ## Short explanation
 
 The current version of Go-CamRecorder works on an association with a camera/kinect and a goban. Up to now, the goban must not move
